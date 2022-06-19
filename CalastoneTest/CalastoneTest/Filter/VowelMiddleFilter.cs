@@ -2,7 +2,7 @@
 {
     public class VowelMiddleFilter : IFilter
     {
-        private readonly char[] _vowels = { 'a', 'e', 'i', 'o', 'u' };
+        private readonly HashSet<char> _vowels = new() { 'a', 'e', 'i', 'o', 'u' };
 
         public IEnumerable<string> Execute(IEnumerable<string> input)
         {
@@ -19,7 +19,6 @@
                 else if (!_vowels.Contains(middleChar))
                     yield return inputWord;
             }
-
         }
     }
 }
